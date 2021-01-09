@@ -1,0 +1,26 @@
+ul {
+    list-style: none;
+}
+
+li {
+    padding:5px;
+}
+
+.main_body {
+    background-color:#7dc2ff;
+}
+
+.header {
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+.button {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #30a0fc;
+}

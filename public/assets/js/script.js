@@ -18,13 +18,16 @@ $(document).ready(function(){
         let newBurger = {
             burger_name: $("#newBurger").val().trim()
         }
-
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(function() {
-            console.log("new burger added");
-            location.reload();
-        });
+        if(newBurger.burger_name===""){
+            alert("Cannot leave field empty");
+        } else {
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(function() {
+                console.log("new burger added");
+                location.reload();
+            });
+        }
     });
 })

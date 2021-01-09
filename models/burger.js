@@ -7,12 +7,14 @@ let burger = {
         })
     },
     add: function(name, cb){
-        orm.insertOne("burgers","burger_name",name,function(res){
+
+        orm.insertOne("burgers","burger_name", [name],function(res){
             cb(res);
         })
     },
     eat: function(condition, cb){
-        orm.updateOne("burgers", "TRUE", condition, function(res) {
+        let values = { devoured: true };
+        orm.updateOne("burgers", values, condition, function(res) {
             cb(res);
         })
     }

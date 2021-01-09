@@ -9,13 +9,13 @@ router.get("/", function(req, res) {
         let allData = {
             burgers: result
         };
-        console.log(allData);
         res.render("index", allData);
     })
 });
 
 router.post("/api/burgers", function (req, res) {
-    burger.add(req.body.name,function(result){
+    let newBurger = req.body;
+    burger.add(newBurger.burger_name,function(result){
         res.json( { id: result.insertId });
     })
 });
